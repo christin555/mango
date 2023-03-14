@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: backend_container
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgressql://admin:root@db:5435/tests
+    build:
+      context: .
+    volumes:
+      - ./:/backend
+    expose:
+      - "3000"
+    ports:
+      - "80:3000"
+    command: npm run dev
+
+  db:
+    container_name: db_container
+    expose:
+      - "5435"
+    ports:
+      - "5435:5435"
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=admin
+      - PGPORT=5435
+    image: postgres:14.3-alpine3.16
+

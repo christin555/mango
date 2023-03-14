@@ -17,7 +17,7 @@ app.use(index);
 
 app.use('/api/', testingRoute);
 
-app.listen(3001,function()
+app.listen(3000,function()
 {
     console.log('API app started')
 })

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "npm up": "node server.js",
-    "devstart": "nodemon node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js --legacy-watch"
   },
   "author": "",
   "license": "ISC",
